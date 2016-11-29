@@ -54,8 +54,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 
 			<div class="desc">
-				<p>上一篇：<a href="/">admin</a></p>
-				<p class="next">下一篇：<a href="/">admin</a></p>
+				<p>上一篇：<a href="/${pre.id}">${pre.title}</a></p>
+				<p class="next">下一篇：<a href="/${next.id}">${next.title}</a></p>
 			</div>
 		</div>
 
@@ -110,4 +110,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 
-
+</body>

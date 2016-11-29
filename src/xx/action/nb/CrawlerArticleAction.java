@@ -17,6 +17,8 @@ public class CrawlerArticleAction extends BaseAction {
     private Page page;
     private Integer id;
     private CrawlerArticle article;
+    private CrawlerArticle pre;
+    private CrawlerArticle next;
     private Integer p=1;//页码
     private Integer s=10;//每页条数
 
@@ -26,6 +28,8 @@ public class CrawlerArticleAction extends BaseAction {
     }
     public String article(){
         article= crawlerArticleService.get(id);
+        pre=crawlerArticleService.pre(id);
+        next=crawlerArticleService.next(id);
         return SUCCESS;
     }
 
@@ -39,6 +43,14 @@ public class CrawlerArticleAction extends BaseAction {
 
     public CrawlerArticle getArticle() {
         return article;
+    }
+
+    public CrawlerArticle getPre() {
+        return pre;
+    }
+
+    public CrawlerArticle getNext() {
+        return next;
     }
 
     public void setP(Integer p) {

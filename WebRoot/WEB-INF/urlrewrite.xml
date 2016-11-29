@@ -10,6 +10,28 @@
 -->
 <urlrewrite>
 
+    <!-- nb -->
+    <rule>
+        <condition name="host" operator="equal">www.lhqnb.com</condition>
+        <from>^/$</from>
+        <to>/nb/index.action?p=1</to>
+    </rule>
+    <rule>
+        <condition name="host" operator="equal">www.lhqnb.com</condition>
+        <from>^/index.html$</from>
+        <to>/nb/index.action?p=1</to>
+    </rule>
+    <rule>
+        <condition name="host" operator="equal">www.lhqnb.com</condition>
+        <from>^/nbs([0-9]*).html$</from>
+        <to>/nb/index.action?p=$1</to>
+    </rule>
+    <rule>
+        <condition name="host" operator="equal">www.lhqnb.com</condition>
+        <from>^/nb([0-9]+).html$</from>
+        <to>/nb/article.action?id=$1</to>
+    </rule>
+
   		<!-- 博客 -->
         <rule>
             <from>^/$</from>

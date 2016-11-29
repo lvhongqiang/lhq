@@ -6,6 +6,8 @@ import xx.dao.BaseDao;
 import xx.model.CrawlerArticle;
 import xx.model.Page;
 
+import java.util.List;
+
 /**
  * Created by lv on 2016/11/28.
  */
@@ -19,5 +21,17 @@ public class CrawlerArticleService {
 
     public CrawlerArticle get(Integer id) {
         return (CrawlerArticle)baseDao.get(CrawlerArticle.class,id);
+    }
+    public CrawlerArticle pre(Integer id) {
+        List<CrawlerArticle> list = baseDao.findList("from CrawlerArticle where id<?", id, 0, 1);
+        if(list!=null&&list.size()>0)
+            return list.get(0);
+        return null;
+    }
+    public CrawlerArticle next(Integer id) {
+        List<CrawlerArticle> list = baseDao.findList("from CrawlerArticle where id>?", id, 0, 1);
+        if(list!=null&&list.size()>0)
+            return list.get(0);
+        return null;
     }
 }
