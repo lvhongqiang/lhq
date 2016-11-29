@@ -8,9 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 	<title></title>
-	<base href="<%=basePath%>nb/">
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<base href="<%=basePath%>">
+	<link href="nb/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="nb/css/style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="header">
 	<div class="container">
 		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" title="" /></a>
+			<a href="/"><img src="nb/images/logo.png" title="" /></a>
 		</div>
 		<!---start-top-nav---->
 		<div class="top-menu">
@@ -51,20 +51,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<s:iterator value="page.list" var="a" status="s">
 					<div class="content-grid-info">
 						<div class="post-info">
-							<h4><a href="article.action?id=${a.id}">${a.title}</a></h4>
+							<h4><a href="nb${a.id}.html">${a.title}</a></h4>
 							<p>${brief}</p>
-							<a href="single.html"><span></span>READ MORE</a>
+							<a href="nb${a.id}.html"><span></span>READ MORE</a>
 						</div>
 					</div>
 					</s:iterator>
 				</div>
 				<div class="pager">
 					<ul class="pager">
-						<li><a href="">上一页</a></li>
+						<li><a href="nbs${page.prePage}.html">上一页</a></li>
 						<s:iterator value="page.range" var="p">
-							<li><a href="">${p}</a></li>
+							<li class="${page.pageNo==p?"selected":""}"><a href="nbs${p}.html">${p}</a></li>
 						</s:iterator>
-						<li><a href="">下一页</a></li>
+						<li><a href="nbs${page.nextPage}.html">下一页</a></li>
 					</ul>
 				</div>
 			</div>

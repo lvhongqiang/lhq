@@ -8,9 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 	<title></title>
-	<base href="<%=basePath%>nb/">
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<base href="<%=basePath%>">
+	<link href="nb/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="nb/css/style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content=""/>
@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="header">
 	<div class="container">
 		<div class="logo">
-			<a href="/"><img src="images/logo.jpg" title="" /></a>
+			<a href="/"><img src="nb/images/logo.jpg" title="" /></a>
 		</div>
 		<!---start-top-nav---->
 		<div class="top-menu">
@@ -54,8 +54,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 
 			<div class="desc">
-				<p>上一篇：<a href="/${pre.id}">${pre.title}</a></p>
-				<p class="next">下一篇：<a href="/${next.id}">${next.title}</a></p>
+				<p>上一篇：<a href="nb${pre.id}.html">${pre.title}</a></p>
+				<p class="next">下一篇：<a href="nb${next.id}.html">${next.title}</a></p>
 			</div>
 		</div>
 
