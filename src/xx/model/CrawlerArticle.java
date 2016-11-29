@@ -12,6 +12,7 @@ public class CrawlerArticle implements java.io.Serializable {
 
 	private Integer id;
 	private String title;
+	private String brief;
 	private String content;
 
 	// Constructors
@@ -21,8 +22,9 @@ public class CrawlerArticle implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public CrawlerArticle(String title, String content) {
+	public CrawlerArticle(String title, String brief, String content) {
 		this.title = title;
+		this.brief = brief;
 		this.content = content;
 	}
 
@@ -42,6 +44,14 @@ public class CrawlerArticle implements java.io.Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getBrief() {
+		return brief;
+	}
+
+	public void setBrief(String brief) {
+		this.brief = brief;
 	}
 
 	public String getContent() {

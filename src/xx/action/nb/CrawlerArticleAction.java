@@ -1,5 +1,7 @@
-package xx.action.lhqnb;
+package xx.action.nb;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import xx.action.BaseAction;
 import xx.model.CrawlerArticle;

@@ -10,7 +10,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 				
 	 <import resource="blog/spring-struts.xml" />
-				
+	 <import resource="nb/spring-struts.xml" />
+
 	<!-- ============ common action ================= -->						
 	<bean id="articleAction" class="xx.action.ArticleAction" scope="prototype"/>	
 	<bean id="inputAction" class="xx.action.InputAction" scope="prototype"/>	
