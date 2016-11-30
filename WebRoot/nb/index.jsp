@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="top-menu">
 			<div class="search">
 				<form>
-					<input type="text" placeholder="" required="">
+					<input type="text" id="bdcsMain" placeholder="全站搜索" required="">
 					<input type="submit" value=""/>
 				</form>
 			</div>
@@ -117,5 +117,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p>Copyrights © 2015 Blog All rights reserved</p>
 	</div>
 </div>
+
+<%@include file="inc/footer.jsp" %>
+</body>
 
 
