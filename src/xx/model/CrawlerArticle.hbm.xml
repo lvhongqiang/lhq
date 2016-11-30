@@ -19,5 +19,8 @@
         <property name="content" type="java.lang.String">
             <column name="content" length="65535" />
         </property>
+        <property name="baiduPost" type="java.lang.Integer">
+            <column name="baidu_post"/>
+        </property>
     </class>
 </hibernate-mapping>

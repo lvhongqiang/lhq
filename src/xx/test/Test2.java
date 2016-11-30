@@ -36,7 +36,7 @@ public class Test2 {
 	 * @throws IOException 
 	 * @throws ClientProtocolException 
 	 */
-	public static void main(String[] args) throws ClientProtocolException, IOException {
+	public static void main(String[] args) throws IOException {
 		HttpClient client=HttpClients.createDefault();
 		
 		//登陆信息

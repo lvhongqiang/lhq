@@ -1,7 +1,6 @@
-/**
+package xx; /**
  * 
  */
-package xx.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

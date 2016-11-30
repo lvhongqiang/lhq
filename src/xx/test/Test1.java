@@ -30,8 +30,8 @@ public class Test1 {
 		if(js_toobar!=null)js_toobar.remove();
 		//生成article
 		Timestamp now=new Timestamp(new Date().getTime());
-		String html=doc.head().toString()+doc.body().toString();;
-		String content=doc.body().text();
+		String html=doc.head().toString()+doc.body().toString();
+        String content=doc.body().text();
 		String title=doc.title();
 		Article article=new Article(title, content, html, 1, now,url);
 		return article;

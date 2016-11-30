@@ -19,7 +19,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/classes/applicationContext.xml,/WEB-INF/classes/spring-struts.xml
+			/WEB-INF/classes/applicationContext.xml,/WEB-INF/classes/spring-struts.xml,/WEB-INF/classes/spring-quartz.xml
 		</param-value>
 	</context-param>
 	<filter>

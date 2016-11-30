@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+				
+        
+<!-- url提交任务 -->
+        <bean id="urlPostJob" class="xx.quartz.UrlPostJob">
+            <!--每次提交url的数量-->
+            <property name="postSize" value="100"/>
+        </bean>
+<!-- 提交url到百度 -->
+        <bean id="urlPostTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+            <property name="targetObject" ref="urlPostJob"/>
+            <property name="targetMethod" value="autoPostToBaidu"/>
+        </bean>
+        <bean id="urlPostTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+            <property name="jobDetail" ref="urlPostTask"/>
+            <property name="cronExpression" value="0 25 3 * * ?"/>
+        </bean>
+<!-- 管理类 如果将lazy-init='false'那么容器启动就会执行调度程序-->
+		<bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+            <property name="triggers">
+                <list>
+                    <ref bean="urlPostTrigger"/>
+                </list>
+            </property>
+        </bean>
+
+</beans>

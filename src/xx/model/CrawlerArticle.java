@@ -14,6 +14,7 @@ public class CrawlerArticle implements java.io.Serializable {
 	private String title;
 	private String brief;
 	private String content;
+	private Integer baiduPost;
 
 	// Constructors
 
@@ -62,4 +63,11 @@ public class CrawlerArticle implements java.io.Serializable {
 		this.content = content;
 	}
 
+	public Integer getBaiduPost() {
+		return baiduPost;
+	}
+
+	public void setBaiduPost(Integer baiduPost) {
+		this.baiduPost = baiduPost;
+	}
 }
