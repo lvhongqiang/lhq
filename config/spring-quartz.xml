@@ -8,6 +8,8 @@
         <bean id="urlPostJob" class="xx.quartz.UrlPostJob">
             <!--每次提交url的数量-->
             <property name="postSize" value="100"/>
+            <!--sitemap访问路径-->
+            <property name="filePath" value="nb/sitemap.txt"/>
         </bean>
 <!-- 提交url到百度 -->
         <bean id="urlPostTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -16,7 +18,7 @@
         </bean>
         <bean id="urlPostTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
             <property name="jobDetail" ref="urlPostTask"/>
-            <property name="cronExpression" value="0 25 3 * * ?"/>
+            <property name="cronExpression" value="0 48 3 * * ?"/>
         </bean>
 <!-- 管理类 如果将lazy-init='false'那么容器启动就会执行调度程序-->
 		<bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">

@@ -13,12 +13,12 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.stereotype.Service;
 import xx.model.vo.BaiduResponse;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -34,6 +34,52 @@ public class PostUrlService extends BaseService {
     private final Integer defaultPostSize=100;
 
     private CloseableHttpClient httpclient = HttpClients.createDefault();
+
+    /**
+     * 如果24小时内有新数据，则重新生成sitemap.txt
+     * @param filePath
+     */
+    public void autoBuildSitemap(String filePath){
+        Calendar calendar=Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR,-1);
+        Integer count=baseDao.countHql("select count(*) from CrawlerArticle where insertTime>?",calendar.getTime());
+        if(count>0){
+            logger.info("生成sitemap.txt开始......");
+            buildSitemap(filePath);
+            logger.info("生成sitemap.txt结束......");
+        }
+    }
+
+    /**
+     * 生成sitemap.txt
+     * @param filePath
+     * @return
+     */
+    public boolean buildSitemap(String filePath){
+        try {
+            String realPath= System.getProperty("user.dir")+"/../webapps/ROOT/"+filePath;
+            logger.debug("准备将sitemap.txt写入到"+realPath);
+            File dir=new File(realPath.substring(0,realPath.lastIndexOf("/")));
+            if(!dir.exists()){
+                dir.mkdirs();
+            }
+            FileWriter out = new FileWriter(realPath);
+            BufferedWriter writer = new BufferedWriter(out);
+            List<Integer> idList=baseDao.find("select id from CrawlerArticle");
+            String url;
+            for (Integer id : idList) {
+                url=postUrl.replace("{{id}}",id.toString());
+                writer.write(url+"\r\n");
+            }
+            writer.close();
+            out.close();
+            logger.debug("成功将sitemap.txt写入到"+realPath);
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     /**
      * 自动读取未提交的url，并提交到百度。
