@@ -400,7 +400,7 @@ margin:1em 0;
 text-align:justify;
 }
 .single-grid img{
-/*width:100%;*/
+  max-width:100%;
 }
 ul.comment-list {
 border: 1px solid #BAB6B6;
