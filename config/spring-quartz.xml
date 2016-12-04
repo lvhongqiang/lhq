@@ -18,7 +18,7 @@
         </bean>
         <bean id="urlPostTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
             <property name="jobDetail" ref="urlPostTask"/>
-            <property name="cronExpression" value="0 48 3 * * ?"/>
+            <property name="cronExpression" value="0 15 * * * ?"/>
         </bean>
 <!-- 管理类 如果将lazy-init='false'那么容器启动就会执行调度程序-->
 		<bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
