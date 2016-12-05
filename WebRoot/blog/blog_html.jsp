@@ -25,6 +25,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<link rel="stylesheet" href="css/blog.css" />
+		<link rel="stylesheet" href="ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" />
+		<script src="ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+		<script>SyntaxHighlighter.all()</script>
 	</head>
 	<!--
 		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
@@ -75,7 +78,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 						</div>
 
-<script type="text/javascript">var jd_union_pid="364456298";var jd_union_euid="";</script><script type="text/javascript" src="http://ads.union.jd.com/static/js/union.js"></script>
 					</div>
 
 				<!-- Sidebar -->
