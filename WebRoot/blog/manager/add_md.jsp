@@ -47,6 +47,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <h2>标题：</h2>
                 <input type="text" name="blog.title" value="${blog.title }" style="width:99%;height:30px;font-size: 18px;padding-left:3px;"/>
             </div>
+           <div class="hang">
+               <h2>关键词：</h2>
+               <input type="text" name="blog.keyword" value="${blog.keyword }" style="width:99%;height:30px;font-size: 18px;padding-left:3px;"/>
+           </div>
             <div class="hang">
                 <h2>简介：</h2>
                 <textarea  name="blog.brief" style="width:99%;height:120px;font-size: 13px;padding-left:3px;">${blog.brief }</textarea>

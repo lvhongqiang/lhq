@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title></title>
+	<title>${article.title}</title>
 	<base href="<%=basePath%>">
 	<link href="nb/css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="nb/css/style.css" rel='stylesheet' type='text/css' />

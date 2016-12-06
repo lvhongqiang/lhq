@@ -16,6 +16,9 @@
   <property generated="never" lazy="false" name="pic" type="java.lang.String">
    <column length="2000" name="pic"/>
   </property>
+  <property generated="never" lazy="false" name="keyword" type="java.lang.String">
+   <column length="2000" name="keyword"/>
+  </property>
   <property generated="never" lazy="false" name="brief" type="java.lang.String">
    <column length="2000" name="brief"/>
   </property>

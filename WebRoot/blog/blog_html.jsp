@@ -10,8 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
 		<title>${blog.title }-哈喽吕小强-的技术博</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="${blog.title },web工程师的技术博客,java,web,网站,app,android,ios,博客,干货,网站开发,手机app" />
-		<meta name="keywords" content="${blog.title },java,web,网站,app,android,ios,博客,干货,网站开发,手机app" />
+		<meta name="description" content="${blog.keyword } ${blog.title }" />
+		<meta name="keywords" content="${blog.keyword }" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>

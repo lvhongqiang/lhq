@@ -14,6 +14,7 @@ public class Blog implements java.io.Serializable {
 	private Integer id;
 	private String title;
 	private String pic;
+	private String keyword;
 	private String brief;
 	private String markdown;
 	private String html;
@@ -51,6 +52,14 @@ public class Blog implements java.io.Serializable {
 	}
 
 	// Property accessors
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
 
 	public Integer getId() {
 		return this.id;
