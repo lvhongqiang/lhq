@@ -32,6 +32,10 @@ public class CrawlerArticleAction extends BaseAction {
         next=crawlerArticleService.next(id);
         return SUCCESS;
     }
+    public String content(){
+        article= crawlerArticleService.get(id);
+        return SUCCESS;
+    }
 
     public Page getPage() {
         return page;
