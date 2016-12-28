@@ -1,5 +1,6 @@
 package xx.model;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.Date;
  * Article entity. @author MyEclipse Persistence Tools
  */
 
-public class CrawlerArticle implements java.io.Serializable {
+public class CrawlerArticle implements Serializable {
 
 	// Fields
 
@@ -16,10 +17,10 @@ public class CrawlerArticle implements java.io.Serializable {
 	private String title;
 	private String brief;
 	private String content;
+	private String translatedContent;
 	private Timestamp insertTime;
 	private Integer baiduPost;
-
-	// Constructors
+    // Constructors
 
 	/** default constructor */
 	public CrawlerArticle() {
@@ -64,6 +65,14 @@ public class CrawlerArticle implements java.io.Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getTranslatedContent() {
+		return translatedContent;
+	}
+
+	public void setTranslatedContent(String translatedContent) {
+		this.translatedContent = translatedContent;
 	}
 
 	public Timestamp getInsertTime() {

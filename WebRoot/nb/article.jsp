@@ -49,8 +49,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="content-form">
 				<h3>${article.title}</h3>
 			</div>
-			<div class="single-grid">
-				<s:property escape="false" value="article.content"/>
+			<div class="single-grid" id="content">
+				<s:if test="article.translatedContent==null">
+					<s:property escape="false" value="article.content"/>
+				</s:if>
+				<s:else>
+					<s:property escape="false" value="article.translatedContent"/>
+				</s:else>
 			</div>
 
 			<div class="desc">
@@ -109,6 +114,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 </div>
 
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#content").load("nb/content.action?id=${article.id}");
+</script>
 
 <%@include file="inc/footer.jsp" %>
 

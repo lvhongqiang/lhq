@@ -33,6 +33,9 @@
 		<action name="article" class="crawlerArticleAction" method="article">
 			<result name="success">/nb/article.jsp</result>
 		</action>
+		<action name="content" class="crawlerArticleAction" method="content">
+			<result name="success">/nb/content.jsp</result>
+		</action>
 
 		<action name="json_*_*" class="{1}Action" method="{2}">
 			<result name="success" type="json"></result>

@@ -19,6 +19,9 @@
         <property name="content" type="java.lang.String">
             <column name="content" length="65535" />
         </property>
+        <property name="translatedContent" type="java.lang.String">
+            <column name="translated_content" length="65535" />
+        </property>
         <property name="insertTime" type="java.sql.Timestamp">
             <column name="insert_time"/>
         </property>
