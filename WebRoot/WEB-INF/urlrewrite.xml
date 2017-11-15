@@ -10,6 +10,13 @@
 -->
 <urlrewrite>
 
+
+    <rule>
+        <condition name="host" operator="equal">www.homasrealty.com</condition>
+        <from>.*$</from>
+        <set type="status">403</set>
+        <to>null</to>
+    </rule>
     <!-- nb -->
     <rule>
         <condition name="host" operator="equal">www.lhqnb.com</condition>
